@@ -1,9 +1,18 @@
-app.controller('mainCtrl', ['$scope', function ( $scope ){
+app.controller('mainCtrl', ['$scope', function ($scope) {
     $scope.name = 'Vishal !';
-    $scope.posts = [];
-    
+    $scope.posts = [
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' },
+        { title: 'title 1', link: ' link 1' }
+    ];
+
     $scope.addPost = function () {
         if (!$scope.title || $scope.title === '') { return; }
+
         $scope.posts.push({
             title: $scope.title,
             link: $scope.link,
@@ -13,12 +22,22 @@ app.controller('mainCtrl', ['$scope', function ( $scope ){
                 { author: 'Bob', body: 'Great idea but everything is wrong!', upvotes: 0 }
             ]
         });
+
         $scope.title = '';
         $scope.link = '';
     }
-    
+
     $scope.incrementUpvotes = function (post) {
         post.upvotes += 1;
     }
-    
+
+    function chunk(arr, size) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i += size) {
+            newArr.push(arr.slice(i, i + size));
+        }
+        return newArr;
+    }
+
+    $scope.postsChunk = chunk($scope.posts, 3);
 }]);
