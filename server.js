@@ -6,6 +6,7 @@ app.get('/', function(req, res ){
 });
 
 app.use('/js', express.static(__dirname + '/client/js'));
+app.use('/lib', express.static(__dirname + '/client/lib'));
 
 app.listen(3000, function(){
     console.log('Started on port : 3000');

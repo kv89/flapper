@@ -1,7 +1,8 @@
 {
-    "name": "flapper",
-    "version":"0.0.1",
-    "dependencies":{
-        "express": "latest"
-    }
+  "name": "flapper",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "latest",
+    "nodemon": "^1.10.0"
+  }
 }
