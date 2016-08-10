@@ -1,4 +1,4 @@
-var app = angular.module('flapper', ['ui.router']);
+var app = angular.module('flapper', ['ui.router', 'ngMaterial']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
